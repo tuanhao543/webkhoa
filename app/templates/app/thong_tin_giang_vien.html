@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin Giảng Viên</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+    <link href="{% static 'app/css/hihi.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+    <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+    </header>
+
+    <nav>
+        <div class="menu">    
+            <ul>
+                <li><a href="{% url 'trang_giang_vien' giangvien.msgv %}">Trang chủ</a></li>
+                <li><a href="#">Chương trình đào tạo</a></li>
+                <li><a href="#">Tra cứu văn bằng</a></li>
+                <li><a href="#">Tra cứu học phần</a></li>
+                
+            </ul>
+            <ul class="dangnhap" id ="main-menu">
+                <li ><a>{{ giangvien.hovaten_gv }}</a>
+                    <ul class="sub-menu">
+                        <li><a href="{% url 'thongtin_GV' giangvien.msgv %}">Thông tin giảng viên</a></li>
+                        <li><a href="{% url 'xem_lich_day_gv' giangvien.msgv %}">Lịch Dạy Học</a></li>
+                        <li><a href="{% url 'trang_chon_mon' giangvien.msgv %}">Xem điểm lớp</a></li>
+                        <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </nav>
+    <table>
+        <tr>
+            <th colspan="2">Thông tin Giảng Viên: {{ giangvien.hovaten_gv }}</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <img src="{{ giangvien.image_gv.url }}" alt="Ảnh của giảng viên">
+            </td>
+        </tr>
+        <tr>
+            <td>Năm sinh:</td>
+            <td>{{ giangvien.namsinh_gv|date:"d/m/Y"}}</td>
+        </tr>
+        <tr>
+            <td>Giới tính:</td>
+            <td>{{ giangvien.gioitinh_gv }}</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ:</td>
+            <td>{{ giangvien.diachi_gv }}</td>
+        </tr>
+        <tr>
+            <td>Nơi sinh:</td>
+            <td>{{ giangvien.noisinh_gv }}</td>
+        </tr>
+        <tr>
+            <td>Quê quán:</td>
+            <td>{{ giangvien.quequan_gv }}</td>
+        </tr>
+    </table>
+    <div style="clear: both">
+    </div>
+
+
+    <footer class="footer menu-custom2">
+                    
+    <div >
+        <div class="row">
+            <h5><center>Copyright 2024<center></h5>    
+                        
+         </div>
+    </div>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xem Thời Khóa Biểu</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+    <link href="{% static 'app/css/c.css' %}" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+        </header>
+    
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'trang_sinh_vien' sinhvien.mssv %}">Trang chủ</a></li>
+                    <li><a href="#">Chương trình đào tạo</a></li>
+                    <li><a href="#">Tra cứu văn bằng</a></li>
+                    <li><a href="#">Tra cứu học phần</a></li>
+                    
+                </ul>
+                <ul class="dangnhap" id ="main-menu">
+                    <li ><a>{{ sinhvien.hovaten_sv }}</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'thongtin_SV' sinhvien.mssv %}">Thông tin sinh viên</a></li>
+                            <li><a href="{% url 'xem_lich_hoc_sv' sinhvien.mssv %}">Lịch Học</a></li>
+                            <li><a href="{% url 'xem_diem_sinh_vien' sinhvien.mssv %}">Kết quả học tập</a></li>
+                            <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                </ul>  
+                 {% comment %} <ul class="nav navbar-nav navbar-right " id ="main-menu">
+                    <li class="stylecolor">
+                                <a>Đăng nhập</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'login_gv' %}">Đăng nhập giảng viên</a></li>
+                                        <li><a href="{% url 'login_sv' %}">Đăng nhập sinh viên</a></li> 
+                                    </ul>
+                                
+                    </li>
+                </ul>        {% endcomment %}
+        </nav>
+
+    <table>
+        <tr>
+            <th>Môn Học</th>
+            <th>Lớp Học</th>
+            <th>Giảng Viên</th>
+            <th>Ca Học</th>
+            <th>Ngày Bắt Đầu</th>
+            <th>Ngày Kết Thúc</th>
+            <th>Ngày Trong Tuần</th>
+        </tr>
+        {% for tkb_sv in lich_hoc_sv %}
+        <tr>
+            <td>{{ tkb_sv.monhoc.ten_mon }}</td>
+            <td>{{ tkb_sv.lophocmon.ten_lop }}</td>
+            <td>{{ tkb_sv.giang_vien.hovaten_gv }}</td>
+            <td>{{ tkb_sv.ca_hoc }}</td>
+            <td>{{ tkb_sv.ngay_bat_dau |date:"d/m/Y"}}</td>
+            <td>{{ tkb_sv.ngay_ket_thuc |date:"d/m/Y" }}</td>
+            <td>{{ tkb_sv.ngay_trong_tuan }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="clear: both">
+    </div>
+
+
+    <footer class="footer menu-custom2">
+                    
+    <div >
+        <div class="row">
+            <h5><center>Copyright 2024<center></h5>    
+                        
+         </div>
+    </div>
+    </footer>
+</div>
+</body>
+</html>

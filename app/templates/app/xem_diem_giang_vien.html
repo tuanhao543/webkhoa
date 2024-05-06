@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang xem điểm và danh sách lớp {{ lop_hoc.ten_lop }}</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+    <link href="{% static 'app/css/c.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+        </header>
+    
+        <nav>
+            <div class="menu">    
+    <ul>
+        <li><a href="{% url 'trang_giang_vien' giangvien.msgv %}">Trang chủ</a></li>
+        <li><a href="#">Chương trình đào tạo</a></li>
+        <li><a href="#">Tra cứu văn bằng</a></li>
+        <li><a href="#">Tra cứu học phần</a></li>
+        
+    </ul>
+    <ul class="dangnhap" id ="main-menu">
+        <li ><a>{{ giangvien.hovaten_gv }}</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'thongtin_GV' giangvien.msgv %}">Thông tin giảng viên</a></li>
+                <li><a href="{% url 'xem_lich_day_gv' giangvien.msgv %}">Lịch Dạy Học</a></li>
+                <li><a href="{% url 'trang_chon_mon' giangvien.msgv %}">Xem điểm lớp</a></li>
+                <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+<div class="table-container">
+    <table>
+        <tr>
+            <th colspan="6">
+                <center><h2>Lớp {{ lop_hoc.ten_lop }}</h2></center>
+            </th>
+        </tr>
+        <tr>
+            <th>STT</th>
+            <th>MSSV</th>
+            <th>Họ và Tên</th>
+            <th>Điểm Giữa Kỳ</th>
+            <th>Điểm Cuối Kỳ</th>
+            <th>Điểm tổng kết</th>
+        </tr>
+        {% for diem in diem_lop %}  
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ diem.sinhvien.mssv }}</td>
+            <td>{{ diem.sinhvien.hovaten_sv }}</td>
+            <td>{{ diem.diem_giua_ky }}</td>
+            <td>{{ diem.diem_cuoi_ky }}</td>
+            <td>{{ diem.diem_tong_ket }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    <div style="clear: both">
+    </div>
+
+
+    <footer class="footer menu-custom2">
+                    
+    <div >
+        <div class="row">
+            <h5><center>Copyright 2024<center></h5>    
+                        
+         </div>
+    </div>
+    </footer>
+</div>
+</body>
+</html>

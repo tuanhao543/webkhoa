@@ -1,0 +1,84 @@
+
+ {% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chọn môn</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+    <link href="{% static 'app/css/haha.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+        </header>
+    
+        <nav>
+            <div class="menu">    
+    <ul>
+        <li><a href="{% url 'trang_giang_vien' giangvien.msgv %}">Trang chủ</a></li>
+        <li><a href="#">Chương trình đào tạo</a></li>
+        <li><a href="#">Tra cứu văn bằng</a></li>
+        <li><a href="#">Tra cứu học phần</a></li>
+        
+    </ul>
+    <ul class="dangnhap" id ="main-menu">
+        <li ><a>{{ giangvien.hovaten_gv }}</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'thongtin_GV' giangvien.msgv %}">Thông tin giảng viên</a></li>
+                <li><a href="{% url 'xem_lich_day_gv' giangvien.msgv %}">Lịch Dạy Học</a></li>
+                <li><a href="{% url 'trang_chon_mon' giangvien.msgv %}">Xem điểm lớp</a></li>
+                <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+<div class="table-container">
+    <table>
+        <tr>
+            <th colspan="3" style="text-align: center;"><h2>Vui lòng chọn môn học để xem</h2></th>
+        </tr>
+        <tr>
+            <th style="text-align: center;">STT</th>
+            <th style="text-align: center;">Môn học</th>
+        </tr>
+        {% for mon in danh_sach_mon_hoc %}
+        <tr>
+            <td style="text-align: center;">{{ forloop.counter }}</td>
+            <td style="text-align: center;">
+                <a href="{% url 'trang_lop_hoc' ma_mon=mon.ma_mon msgv=giangvien.msgv %}">
+                {{ mon.ten_mon }}
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2" style="text-align: center;">Không có môn học nào được giảng dạy bởi giảng viên này.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    <div style="clear: both">
+    </div>
+
+
+    <footer class="footer menu-custom2">
+                    
+    <div >
+        <div class="row">
+            <h5><center>Copyright 2024<center></h5>    
+                        
+         </div>
+    </div>
+    </footer>
+</div>
+</body>
+</html>
+{% endblock %} 
+
+
+
+
+

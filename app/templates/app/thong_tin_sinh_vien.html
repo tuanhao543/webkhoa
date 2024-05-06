@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin Sinh Viên</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+    <link href="{% static 'app/css/hihi.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+        </header>
+    
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'trang_sinh_vien' sinhvien.mssv %}">Trang chủ</a></li>
+                    <li><a href="#">Chương trình đào tạo</a></li>
+                    <li><a href="#">Tra cứu văn bằng</a></li>
+                    <li><a href="#">Tra cứu học phần</a></li>
+                    
+                </ul>
+                <ul class="dangnhap" id ="main-menu">
+                    <li ><a>{{ sinhvien.hovaten_sv }}</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'thongtin_SV' sinhvien.mssv %}">Thông tin sinh viên</a></li>
+                            <li><a href="{% url 'xem_lich_hoc_sv' sinhvien.mssv %}">Lịch Học</a></li>
+                            <li><a href="{% url 'xem_diem_sinh_vien' sinhvien.mssv %}">Kết quả học tập</a></li>
+                            <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+        </nav>
+        <table>
+            <tr>
+                <th colspan="2">Thông tin Sinh Viên: {{ sinhvien.hovaten_sv }}</th>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <img src="{{ sinhvien.image_sv.url }}" alt="Ảnh của sinh viên">
+                </td>
+            </tr>
+            <tr>
+                <td>Lớp:</td>
+                <td>{{ sinhvien.hoclop}}</td>
+            </tr>
+            <tr>
+                <td>Năm sinh:</td>
+                <td>{{ sinhvien.namsinh_sv|date:"d/m/Y"}}</td>
+            </tr>
+            <tr>
+                <td>Giới tính:</td>
+                <td>{{ sinhvien.gioitinh_sv }}</td>
+            </tr>
+            <tr>
+                <td>Địa chỉ:</td>
+                <td>{{ sinhvien.diachi_sv }}</td>
+            </tr>
+            <tr>
+                <td>Nơi sinh:</td>
+                <td>{{ sinhvien.noisinh_sv }}</td>
+            </tr>
+            <tr>
+                <td>Quê quán:</td>
+                <td>{{ sinhvien.quequan_sv }}</td>
+            </tr>
+        </table>
+    
+    <div style="clear: both">
+    </div>
+
+
+    <footer class="footer menu-custom2">
+                    
+    <div >
+        <div class="row">
+            <h5><center>Copyright 2024<center></h5>    
+                        
+         </div>
+    </div>
+    </footer>
+</div>
+</body>
+</html>

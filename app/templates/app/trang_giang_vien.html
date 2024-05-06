@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang Giảng Viên</title>
+    <!-- Liên kết CSS và JavaScript nếu cần -->
+    <link href="{% static 'app/css/hun.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: center; padding: 5px;"><img class ="anh_logo"  src=" {% static 'app/image/anh1.jpg' %}" alt="" />
+        </header>
+    
+        <nav>
+            <div class="menu">    
+    <ul>
+        <li><a href="{% url 'trang_giang_vien' giangvien.msgv %}">Trang chủ</a></li>
+        <li><a href="#">Chương trình đào tạo</a></li>
+        <li><a href="#">Tra cứu văn bằng</a></li>
+        <li><a href="#">Tra cứu học phần</a></li>
+        
+    </ul>
+    <ul class="dangnhap" id ="main-menu">
+        <li ><a>Chào: {{ giangvien.hovaten_gv }}</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'thongtin_GV' giangvien.msgv %}">Thông tin giảng viên</a></li>
+                <li><a href="{% url 'xem_lich_day_gv' giangvien.msgv %}">Lịch Dạy Học</a></li>
+                <li><a href="{% url 'trang_chon_mon' giangvien.msgv %}">Xem điểm lớp</a></li>
+                <li><a href="{% url 'home' %}">Đăng Xuất</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+<div  style="display: flex; justify-content: center; padding: 3px;   ">
+<center><a href=""><img class ="anh_logo"  src=" {% static 'app/image/hcm.jpg' %}" alt="" /></a></center>
+</div>
+<article>
+<h2>Sự kiện - Tin tức </h2>
+<div class="new_list">
+    <div class="new_item" id="fux">
+        <h4>Buổi lễ đón tiếp và làm việc giữa Trường Đại học Tài nguyên và Môi trường TP.HCM và Công ty Cổ phần SEAREFICO</h4>
+        <img class ="anh_nen" src="{% static 'app/image/dontiepnho.jpg' %}" alt="">
+        <div>
+            <a href='https://stf.hcmunre.edu.vn/buoi-le-don-tiep-va-lam-viec-giua-truong-dai-hoc-tai-nguyen-va-moi-truong-tphcm-va-cong-ty-co-phan-searefico-nd39eb8a5accb2e'>Chiều ngày 21/03/2024, tại Phòng họp A, Trường Đại học Tài nguyên và Môi trường Thành phố Hồ Chí Minh đã có buổi làm việc cùng Đoàn công tác từ phía Công ty Cổ phần SEAREFICO để cùng </a>
+        </div>
+
+    </div>
+    <div class="new_item">
+        <h4>Buổi lễ đón tiếp và làm việc giữa Trường Đại học Tài nguyên và Môi trường TP.HCM và Trường Đại học Southern Queensland, Úc</h4>
+        <img class ="anh_nen" src="{% static 'app/image/dontiepnho2.jpg' %}" alt="">
+        <div>
+            <a href="https://stf.hcmunre.edu.vn/buoi-le-don-tiep-va-lam-viec-giua-truong-dai-hoc-tai-nguyen-va-moi-truong-tphcm-va-truong-dai-hoc-southern-queensland-uc-nd3961a3dd4c1dd">Sáng ngày 14/03/2024, tại Phòng họp A, Trường Đại học Tài nguyên và Môi trường Thành phố Hồ Chí Minh đã có buổi làm việc cùng Đoàn công tác từ phía Trường Đại học Southern Queensland, Úc (UniSQ)...</a>
+        </div>
+
+    </div>
+    <div class="new_item" id="fix">
+        <h4>Buổi lễ đón tiếp và làm việc giữa Trường Đại học Tài nguyên và Môi trường TP.HCM về chương trình “Trường Đại học... khí hậu Climate Smart” </h4>
+        <img class ="anh_nen" src="{% static 'app/image/dontiepnho3.jpg' %}" alt="">
+        <div style=" text-decoration: none ;">
+            <a href='https://stf.hcmunre.edu.vn/buoi-le-don-tiep-va-lam-viec-giua-truong-dai-hoc-tai-nguyen-va-moi-truong-tphcm-ve-chuong-trinh-truong-dai-hoc-thong-minh-thich-ung-bien-doi-khi-hau-climate-smart-nd3961cce5e2f9d'>Chiều ngày 13/03/2024, tại Phòng họp B, Trường Đại học Tài nguyên và Môi trường Thành phố Hồ Chí Minh đã có buổi làm việc cùng Đoàn công tác từ phía các Công ty Stride, Công ty Eboost,... </a>
+        </div>
+
+    </div>
+</div>
+</article>
+<article>
+    <h2>Hợp tác</h2>
+    <div class="new_list">
+        <div class="new_item">
+            <h4>Chương trình liên kết quốc tế</h4>
+            <img class ="anh_nen" src="{% static 'app/image/htqt1.jpg' %}" alt="">
+            <div>
+                <p></p>
+            </div>
+
+        </div>
+        <div class="new_item">
+            <h4>Tiêu chuẩn - Hợp Tác Quốc Tế</h4>
+            <img class ="anh_nen" src="{% static 'app/image/htqt2.jpg' %}" alt="">
+            <div>
+                <p></p>
+            </div>
+
+        </div>
+        <div class="new_item" id="fix">
+            <h4>Lợi ích từ hợp tác quốc tế</h4>
+            <img class ="anh_nen" src="{% static 'app/image/htqt3.jpg' %}" alt="">
+            <div>
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+</article>
+<div style="clear: both">
+</div>
+
+
+<footer class="footer menu-custom2">
+        
+<div >
+<div class="row">
+<h5><center>Copyright 2024<center></h5>    
+            
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
+
+
