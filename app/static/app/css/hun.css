@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "roboto", sans-serif;
+}
+.container{
+    width: 1150px;
+    margin: 0 auto;
+}
+
+header{
+    width: 1150px;
+    height: 175px;
+   text-transform: uppercase;
+}
+.anh_logo{
+    width: 1150px;
+    
+
+}
+
+.anh_user
+{
+    width: 1150px;
+    
+}
+
+
+nav{
+   height: 35px;
+   background: #124e35; 
+   text-transform: uppercase;
+ 
+   text-align: center;
+   margin:auto;
+   
+}
+    
+nav .menu ul{
+    list-style: none;
+}
+
+nav .menu ul li{
+    float: left;
+    line-height: 35px;
+    padding:  0 15px;
+}
+
+nav .menu ul li a{
+    color: white;
+    font-size: 16px;
+    text-decoration: none ;
+}
+
+nav .dangnhap
+{
+    line-height: 35px;
+    float: right;
+    margin-right: 15px;
+}
+
+article h2{
+    text-align: center;
+    padding: 15px 0;
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    
+}
+
+article .new_list .new_item
+  {
+    
+    text-align: center;
+    width: 28%;
+    padding: 17px;
+    float: left;
+    
+    margin-right: 3.5%;
+}
+#fix{
+    margin-right: 0;
+  }
+  #fux{
+    margin-left: 0;
+  }
+footer{
+    height: 40px;
+    background: #124e35;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+
+
+
+
+#main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #124e35;
+    list-style: none;
+    width: 250px;
+    padding: 10px 0px;
+    border:  2px solid rgb(45, 77, 114);
+    border-radius: 10px;
+    display: none;
+    right:  -50px;
+    text-align: left;
+    float: right;
+}
+#main-menu li:hover>ul.sub-menu{
+    display: block;
+}
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid rgb(93, 130, 162);
+    left: 0px;
+}
+
+#main-menu ul.sub-menu li:last-child a{
+    border: none;
+    }
+
+#main-menu li{
+      position: relative;
+  }
+#main-menu{
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+#main-menu li a{
+      
+      display: block;
+      padding: auto;
+      font-size: 16px;
+  }
+
+.h1{
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+.kcach{
+    padding-left: 20%;
+}
+
+
+
+
+
+
